@@ -14,7 +14,7 @@ $('document').ready(function() {
     var database = firebase.database();
 
     // Capture Button Click
-    $('#add-user').on('click', function() {
+    $('#submit-button').on('click', function() {
         // Don't refresh the page!
         event.preventDefault();
 
@@ -22,16 +22,16 @@ $('document').ready(function() {
 
         // Code in the logic for storing and retrieving the most recent user.
         database.ref().set({
-            name: $('#name-input').val(),
-            age: $('#age-input').val(),
-            email: $('#email-input').val(),
-            comment: $('#comment-input').val(),
+            name: $('#name').val(),
+            role: $('#role').val(),
+            start: $('#start').val(),
+            rate: $('#rate').val(),
         });
         // Don't forget to provide initial data to your Firebase database.
-        $('#name-display').html($('#name-input').val());
-        $('#age-display').html($('#age-input').val());
-        $('#email-display').html($('#email-input').val());
-        $('#comment-display').html($('#comment-input').val());
+        $('#name-display').html($('#name').val());
+        $('#age-display').html($('#role').val());
+        $('#email-display').html($('#start').val());
+        $('#comment-display').html($('#rate').val());
     });
 
     // Firebase watcher + initial loader HINT: .on("value")
