@@ -29,9 +29,9 @@ $('document').ready(function() {
         });
         // Don't forget to provide initial data to your Firebase database.
         $('#name-display').html($('#name').val());
-        $('#age-display').html($('#role').val());
-        $('#email-display').html($('#start').val());
-        $('#comment-display').html($('#rate').val());
+        $('#role-display').html($('#role').val());
+        $('#start-display').html($('#start').val());
+        $('#rate-display').html($('#rate').val());
     });
 
     // Firebase watcher + initial loader HINT: .on("value")
@@ -41,9 +41,9 @@ $('document').ready(function() {
             var info = snapshot.val();
             if (info != null) {
                 $('#name-display').html(info.name);
-                $('#age-display').html(info.age);
-                $('#email-display').html(info.email);
-                $('#comment-display').html(info.comment);
+                $('#role-display').html(info.role);
+                $('#start-display').html(info.start);
+                $('#rate-display').html(info.rate);
             }
         },
 
